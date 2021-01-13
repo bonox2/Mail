@@ -60,7 +60,6 @@ const html = `<article class="card">
 
     where.insertAdjacentHTML('beforeEnd', html)
 
-}
 // {
 //     "id": 1,
 //     "phone": "+63 (924) 979-2252",
