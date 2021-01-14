@@ -51,3 +51,46 @@ table {
 	max-width: 1170px;
 	margin:0 auto;
 }
+.mail-counts{
+	background-color: aquamarine;
+	padding: 8px;
+	display: flex;
+}
+.letters-number{
+	margin-right: 120px;
+}
+
+
+
+.letters-main{
+	display: flex;
+	flex-direction: column;
+}
+.letter-section{
+	padding: 30px 60px;
+	background-color: lightblue;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.sender-info{
+	display: flex;
+	flex-direction: row;
+}
+.senders-photo{
+	margin-right: 40px;
+}
+.sender-name{
+	margin-bottom: 15px;
+}
+.message-info{
+	width: 400px;
+}
+.date-time{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.time{
+	margin-right: 30px;
+}
