@@ -24,16 +24,15 @@ function renderCard(where, data) {
         `<div class="letters-main">
         <div class="letter-section">
             <div class="sender-info">
-                <div class="senders-photo"><img src="./img/Screenshot_1.png" alt=""></div>
+                <div class="senders-photo"><img src="${data.avatar}" alt=""></div>
                 <div>
                     <div class="sender-name">${data.name}</div>
-                    <div class="sender-number">095 555 55 55</div>
+                    <div class="sender-number">${data.phone}</div>
                 </div>
             </div>
-            <div class="message-info"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem eos laboriosam animi repudiandae ducimus.</div>
+            <div class="message-info"> ${data.message}</div>
             <div class="date-time">
-                <div class="time">11:50</div>
-                <div class="date">01.12.2020</div>
+                <div class="time">${data.date}</div>
             </div>
         </div>
     </div>`
