@@ -94,3 +94,10 @@ table {
 .time{
 	margin-right: 30px;
 }
+
+.seen{
+	
+}
+.not_seen{
+	background-color: aliceblue;
+}

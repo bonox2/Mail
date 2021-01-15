@@ -2,7 +2,12 @@ const messages = MESSAGES
 const list = document.getElementById('list')
 
 
-
+const seen = document.querySelector(selectors: '.list')
+list.addEventListener(type: 'click', listener:(event) =>{
+    target.classlist.add('not_seen')
+})
+    
+        
 
 renderCard(list, {
         "id": 1,
@@ -13,8 +18,6 @@ renderCard(list, {
         "date": "1609595510000",
         "seen": false
       })
-
-
       addCards(list, messages)
 function addCards(elem, messages) {
 
@@ -27,8 +30,7 @@ function addCards(elem, messages) {
 
 function renderCard(where, data) {
     const html =
-        `<div class="letters-main">
-        <div class="letter-section">
+        `<div class="letter-section seen">
             <div class="sender-info">
                 <div class="senders-photo"><img src="${data.avatar}" alt=""></div>
                 <div>
