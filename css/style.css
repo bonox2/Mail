@@ -46,6 +46,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+body{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 .container{
 	width: 100%;;
 	max-width: 1170px;
@@ -55,6 +59,12 @@ table {
 	background-color: aquamarine;
 	padding: 8px;
 	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.mail-counts>button{
+	font-size: 30px;
+	cursor: pointer;
 }
 .letters-number{
 	margin-right: 120px;
@@ -72,6 +82,9 @@ table {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+}
+.letter-section:nth-child(n+2){
+	border-top: 2px solid #000;
 }
 .sender-info{
 	display: flex;
@@ -96,8 +109,8 @@ table {
 }
 
 .seen{
-	
+	background-color: #fff;
 }
 .not_seen{
-	background-color: aliceblue;
+	font-weight: bold;
 }
