@@ -20,12 +20,12 @@ listEl.addEventListener('click', event => {
     if (messageEl) {
         let id = messageEl.dataset.id
         console.log('click', id);
+        //тут вызвать функцию checkMessage
     }
 })
 
 // function checkMessage(id) {
 //     messages.find((message, i) => {
-
 //         if () {//сделать прочитанным
             
 //             //поменять seen
@@ -33,8 +33,6 @@ listEl.addEventListener('click', event => {
 //         } else if () {//удаление
 //             messages.splice(i,1)
 //         }
-
-
 //     })
 //     addMessages(listEl, messages)
 // }
@@ -44,26 +42,25 @@ addMessages(listEl, messages)
 
 function addMessages(elem, messages) {
     allCountEl.textContent = messages.length
-    const unreadMessages = messages.filter(function (message) {
-        if (message.seen == false) {
-            return true
-        } 
-     })
+    const unreadMessages = messages.filter(message => !message.seen)
     unreadCountEl.textContent = unreadMessages.length
 
     elem.innerHTML = ''
-
+    
      messages.sort((a,b) => {
          return a.seen - b.seen || b.date - a.date
      })
 
+    let messagesHtml = ''
     messages.forEach(message => {
-        renderMessage(elem, message)
+        messagesHtml += renderMessage(message)
     });
+
+    elem.insertAdjacentHTML('beforeEnd', messagesHtml)
 
 }
 
-function renderMessage(where, data) {
+function renderMessage(data) {
     const html =
         `<div class="letter-section ${data.seen ? 'seen' : 'not_seen'}" data-id="${data.id}">
             <div class="sender-info">
@@ -80,7 +77,7 @@ function renderMessage(where, data) {
             </div>
         </div>
     </div>`
-    where.insertAdjacentHTML('beforeEnd', html)
+    return html
 }
 
 
@@ -90,10 +87,12 @@ function renderMessage(where, data) {
 
 
 
-
-
-
-
+// const numbers = [10,10,10,5]
+// let result = 0
+// numbers.forEach(n => {
+//      result = n
+// })
+// console.log(result);
 
 
 
