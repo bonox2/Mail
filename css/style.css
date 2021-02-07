@@ -114,16 +114,3 @@ body{
 .not_seen{
 	font-weight: bold;
 }
-
-
-
-
-#content{
-	overflow: hidden;
-}
-#content.open{
-	max-height: 600px;
-}
-#show-more{
-	font-size: 18px;
-}
