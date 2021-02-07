@@ -1,3 +1,34 @@
+var contant = document.getElementById("content")
+var button = document.getElementById("show-more")
+
+button.onclick = function() {
+    if(contant.classname == "open"){
+    content.className = ""
+    button.innerHTML= "show more"
+    }else {
+        content.className ="open"
+        button.innerHTML = "Show less"
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let messages = [...DATA]
 const listEl = document.getElementById('list')
 const allCountEl = document.getElementById('allCount')
@@ -26,16 +57,33 @@ listEl.addEventListener('click', event => {
 
 // function checkMessage(id) {
 //     messages.find((message, i) => {
-//         if () {//сделать прочитанным
-            
-//             //поменять seen
+//         if (seen==false) {
 //             messages[i] = message//перезапись
-//         } else if () {//удаление
+//         } else if (seen==false) {//удаление
 //             messages.splice(i,1)
 //         }
 //     })
 //     addMessages(listEl, messages)
 // }
+// searchForm.addEventListener('submit', function (event) {
+//     event.preventDefault()
+//     let query = event.target.search.value.toLowerCase().trim().split(' ')
+//     console.log(query);
+//     const fieldsForSearch = ['phone', 'name', 'text']
+//     console.time('filter ->>>')
+//     messages = MESSAGES.filter(messages => {
+//         return query.every(word => {
+//             return fieldsForSearch.some(field => {
+//                 return `${messages[field]}`.toLowerCase().includes(word)
+//             })
+//         })
+//     })
+//     console.timeEnd('filter ->>>')
+//     console.log(messages);
+//     addCards(list, messages) 
+    
+// })
+
 
 addMessages(listEl, messages)
 
@@ -70,7 +118,7 @@ function renderMessage(data) {
                     <div class="sender-number">${data.phone}</div>
                 </div>
             </div>
-            <div class="message-info"> ${data.text}</div>
+            <div id="content" class="message-info"> ${data.text} <a id= "show-more">Show more</a></div>
             <div class="date-time">
                 <div class="time">${timeFormat.format(data.date)}</div>
                 <div class="time">${dateFormat.format(data.date)}</div>
@@ -79,6 +127,19 @@ function renderMessage(data) {
     </div>`
     return html
 }
+// sortSelect.addEventListener('change', event => {
+//     // let value = event.target.value // price-dec
+//     let [prop, type] = event.target.value.split('-')// ['odo', 'inc']
+//     cars.sort(function (a,b) {
+//         if (type == 'dec') {
+//             return b[prop] - a[prop]
+//         } else if (type == 'inc'){
+//             return a[prop] - b[prop]
+//         }
+//     })
+
+//     addCards(list, cars)
+// })
 
 
 
