@@ -25,26 +25,25 @@ refreshBtnEl.addEventListener('click', event => {//
     messages = [...DATA]
     addMessages(listEl, messages)
 })
-listEl.addEventListener('click', event => {
-    const messageEl = event.target.closest('.letter-section')
-    if (messageEl) {
-        let id = messageEl.dataset.id
+listEl.addEventListener('click', event => { //добавляем на елемент наблюдатель и функцыю по клику наблюдатель будет говорить где произошел клик
+    const messageEl = event.target.closest('.letter-section')//происходит клик на ближайший родительский елемент 
+    if (messageEl) {//локальная константа
+        let id = messageEl.dataset.id //переменная id = dtaset.id
         console.log('click', id);
         checkMessage(id)
     }
 })
-
-function checkMessage(id) {
-    messages.forEach((message, i) => {
-        if (message.id == id) {
-            if (!message.seen) {
-                messages[i] = {...message, seen: true}//перезапись
+function checkMessage(id) {//название функции
+    messages.forEach((message, i) => {//в масиве меседжес вызиваем функцыю для каждого елемента
+        if (message.id == id) {//если id = ??????????
+            if (!message.seen) {//если seen = false то
+                messages[i] = {...message, seen: true}//перезапись 
             } else if (message.seen) {//удаление
-                messages.splice(i, 1)
+                messages.splice(i, 1)//удаляем улементы и вставляем items
             }
         }
     })
-    addMessages(listEl, messages)
+    addMessages(listEl, messages)//??77
 }
 
 
@@ -65,13 +64,11 @@ searchFormEl.addEventListener('submit', function (event) {
 })
 
 
-
-
-
+     
 function addMessages(elem, messages) {
-    allCountEl.textContent = messages.length
+    allCountEl.textContent = messages.length//не прочитаные и посчитаные сообщения равны длинне масива
     const unreadMessages = messages.filter(message => !message.seen)
-    unreadCountEl.textContent = unreadMessages.length
+    unreadCountEl.textContent = unreadMessages.length//не прочитаные и посчитаные сообщения равны длинне длинне нового чегото
 
     elem.innerHTML = ''
     
@@ -79,14 +76,14 @@ function addMessages(elem, messages) {
          return a.seen - b.seen || b.date - a.date//??
      })
 
-    let messagesHtml = ''
-    messages.forEach(message => {
-        messagesHtml += renderMessage(message)
+    let messagesHtml = '' //переменная равна строке
+    messages.forEach(message => {//функцыя для каждого елемента
+        messagesHtml += renderMessage(message)//messagesHtml добавляем renderMessage
     });
-    elem.innerHTML = messagesHtml
+    elem.innerHTML = messagesHtml//приравниваем
 }
 
-function renderMessage(data) {
+function renderMessage(data) {//каркас секции
     const html =
         `<div class="letter-section ${data.seen ? 'seen' : 'not_seen'}" data-id="${data.id}">
             <div class="sender-info">
@@ -103,7 +100,7 @@ function renderMessage(data) {
             </div>
         </div>
     </div>`
-    return html
+    return html//возвращаем результат
 }
 
 
