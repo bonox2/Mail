@@ -15,7 +15,7 @@ async function getUsers(url) {
 
 
 
-let messages = [...DATA]//
+let messages = getUsers
 const listEl = document.getElementById('list')//
 const allCountEl = document.getElementById('allCount')
 const unreadCountEl = document.getElementById('unreadCount')
