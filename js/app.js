@@ -1,3 +1,20 @@
+
+
+
+getUsers('js/messages.json')
+
+async function getUsers(url) {
+    const response = await fetch(url)
+    console.log(response);
+    const data = await response.json()
+    console.log(data)
+}
+
+
+
+
+
+
 let messages = [...DATA]//
 const listEl = document.getElementById('list')//
 const allCountEl = document.getElementById('allCount')
@@ -102,7 +119,7 @@ function renderMessage(data) {//каркас секции
     </div>`
     return html//возвращаем результат
 }
-
+кц
 
 
 
@@ -119,4 +136,4 @@ function renderMessage(data) {//каркас секции
 // {
 //     let num = 7
 //     console.log(num);
-// }
+// }*/
