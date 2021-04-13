@@ -1,10 +1,8 @@
-let messages = [...DATA]//
 const listEl = document.getElementById('list')//
 const allCountEl = document.getElementById('allCount')
 const unreadCountEl = document.getElementById('unreadCount')
 const refreshBtnEl = document.getElementById('refreshBtn')
 const searchFormEl = document.getElementById('searchForm')
-
 
 const dateFormat = new Intl.DateTimeFormat(undefined)//
 const timeFormat = new Intl.DateTimeFormat(undefined, {
@@ -15,8 +13,16 @@ const timeFormat = new Intl.DateTimeFormat(undefined, {
 
 
 
-addMessages(listEl, messages)//
 
+
+getUsers('/js/messages.json')
+
+async function getUsers(url) {
+    const response = await fetch(url)
+    const data = await response.json()
+    messages = data
+    addMessages(listEl, messages)
+}
 
 
 
@@ -79,7 +85,7 @@ function addMessages(elem, messages) {
 
     let messagesHtml = '' //переменная равна строке
     messages.forEach(message => {//функцыя для каждого елемента
-        messagesHtml += renderMessage(message)//messagesHtml добавляем renderMessage
+        messagesHtml += renderMessage(message)
     });
     elem.innerHTML = messagesHtml//приравниваем
 }
@@ -103,5 +109,3 @@ function renderMessage(data) {//каркас секции
     </div>`
     return html//возвращаем результат
 }
-
-
