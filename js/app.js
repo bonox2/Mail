@@ -1,26 +1,10 @@
-
-
-
-getUsers('js/messages.json')
-
-async function getUsers(url) {
-    const response = await fetch(url)
-    console.log(response);
-    const data = await response.json()
-    console.log(data)
-}
-
-
-
-
-
-
-let messages = getUsers
+let messages = [...DATA]//
 const listEl = document.getElementById('list')//
 const allCountEl = document.getElementById('allCount')
 const unreadCountEl = document.getElementById('unreadCount')
 const refreshBtnEl = document.getElementById('refreshBtn')
 const searchFormEl = document.getElementById('searchForm')
+
 
 const dateFormat = new Intl.DateTimeFormat(undefined)//
 const timeFormat = new Intl.DateTimeFormat(undefined, {
@@ -119,21 +103,5 @@ function renderMessage(data) {//каркас секции
     </div>`
     return html//возвращаем результат
 }
-кц
 
 
-
-
-
-
-//Как делать задачи
-//Lesson 2 task 1
-{
-    let num = 3
-    console.log(num);
-}
-//Lesson 2 task 2
-// {
-//     let num = 7
-//     console.log(num);
-// }*/
